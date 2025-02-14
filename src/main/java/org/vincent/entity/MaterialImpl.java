@@ -18,6 +18,22 @@ public class MaterialImpl implements Material{
         return "";
     }
 
+    @Override
+    public String returnBorrow() {
+        return "";
+    }
+
+    public String getTitle(){
+        return this.title;
+    }
+
+    public boolean getIsAvailable(){
+        return this.isAvailable;
+    }
+
+    public String borrowedBy(){
+        return this.borrowedBy;
+    }
 }
 
 
