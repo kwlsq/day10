@@ -1,4 +1,4 @@
-package org.vincent.entity;
+package org.vincent.entity.material;
 
 public class MaterialImpl implements Material{
     private final String title;

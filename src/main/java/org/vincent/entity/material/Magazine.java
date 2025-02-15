@@ -1,4 +1,4 @@
-package org.vincent.entity;
+package org.vincent.entity.material;
 
 public class Magazine extends MaterialImpl{
     public Magazine(String title, Integer stock, String borrowedBy){
