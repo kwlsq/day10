@@ -1,5 +1,6 @@
 package org.vincent.entity.menu;
 
+import org.vincent.entity.material.MaterialImpl;
 import org.vincent.entity.user.Role;
 import org.vincent.entity.user.UserImpl;
 
@@ -10,6 +11,7 @@ public class Auth {
     Scanner scanner = new Scanner(System.in);
 
     HashMap<String, UserImpl> userList = new HashMap<>();
+    HashMap<String, MaterialImpl> materialList = new HashMap<>();
 
     public void login() {
         userList.put("Jane", new UserImpl("Jane", Role.ADMIN, "123"));
@@ -19,11 +21,6 @@ public class Auth {
         System.out.println("Welcome to the El-Grande Library");
 
         while (true) {
-//            for (Map.Entry<String, User> entry : userList.entrySet()) {
-//                User user = entry.getValue();
-//                System.out.println(user.getName());
-//            }
-
             System.out.println("Enter username: ");
             String username = scanner.next();
 
@@ -32,13 +29,13 @@ public class Auth {
 
             UserImpl user = userList.get(username);
             if (user != null && user.authLogin(username, password)) {
-                System.out.println("Login successful!\nWelcome, " + username + "!");
+                System.out.println("Login successful!\nWelcome, " + username + "!\n");
                 Role role = user.getRole();
+                Library library = new Library();
+                library.libraryPrompt(role,user);
             } else {
                 System.out.println("Invalid username or password.");
             }
-
-            break;
         }
     }
 

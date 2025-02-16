@@ -1,6 +1,8 @@
 package org.vincent.entity.material;
 
+import org.vincent.entity.user.UserImpl;
+
 public interface Material {
-    public String borrow();
-    public String returnBorrow();
+    public void borrow(UserImpl username);
+    public void returnBorrow(UserImpl username);
 }

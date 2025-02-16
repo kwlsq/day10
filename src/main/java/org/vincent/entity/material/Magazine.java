@@ -1,12 +1,17 @@
 package org.vincent.entity.material;
 
 public class Magazine extends MaterialImpl{
-    public Magazine(String title, Integer stock, String borrowedBy){
-        super(title,stock,borrowedBy);
+    public Magazine(String title, Integer stock){
+        super(title,stock);
     }
 
+//    @Override
+//    public String borrow(){
+//        return "Magazine Borrowed: ";
+//    }
+
     @Override
-    public String borrow(){
-        return "Magazine Borrowed: ";
+    public String getTitle(){
+        return "Magazine title: " + title;
     }
 }
